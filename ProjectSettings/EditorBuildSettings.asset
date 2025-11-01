@@ -6,19 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Project/Prefabs/Scenes/MainMenu.unity
+    path: Assets/Project/Scenes/MainMenu.unity
     guid: 518e707e132963a3d9a8c1e58a1dd2f9
   - enabled: 1
-    path: Assets/Project/Prefabs/Scenes/LoadingScene.unity
+    path: Assets/Project/Scenes/LoadingScene.unity
     guid: af735eab568e816d9a8b23a242df62eb
   - enabled: 1
-    path: Assets/Project/Prefabs/Scenes/SafeZone.unity
+    path: Assets/Project/Scenes/SafeZone.unity
     guid: afd99357e49ac9fe39b1a749a593af27
   - enabled: 1
-    path: Assets/Project/Prefabs/Scenes/Test/StepanTest.unity
+    path: Assets/Project/Scenes/Test/StepanTest.unity
     guid: 84225b2cd4ad192a4b63401203043995
   - enabled: 1
-    path: Assets/Project/Prefabs/Scenes/Test/DavidTest.unity
+    path: Assets/Project/Scenes/Test/DavidTest.unity
     guid: bdf9d1acf8b2602768d1a8791a18f541
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
