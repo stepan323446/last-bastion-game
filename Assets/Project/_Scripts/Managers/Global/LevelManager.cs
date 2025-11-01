@@ -30,8 +30,8 @@ namespace Project._Scripts.Managers.Global
         {
             // Init Loader scene
             LoadSceneProgress = 0;
-            SceneManager.LoadSceneAsync(_loadingSceneName);
-            UIManager.Instance.DisableUIManager();
+            UIManager.Instance?.DisableUIManager();
+            await SceneManager.LoadSceneAsync(_loadingSceneName);
             
             // Start to load new scene
             AsyncOperation scene = SceneManager.LoadSceneAsync(sceneName);
@@ -59,7 +59,7 @@ namespace Project._Scripts.Managers.Global
             // Activate new scene
             scene.allowSceneActivation = true;
             if (uiManagerEnabled)
-                UIManager.Instance.EnableUIManager();
+                UIManager.Instance?.EnableUIManager();
         }
     }   
 }

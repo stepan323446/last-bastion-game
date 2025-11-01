@@ -88,10 +88,6 @@ namespace Project._Scripts.Managers.Global
                 }
             }
         }
-        public void QuitToMainMenu()
-        {
-            LevelManager.Instance.LoadMainMenu();
-        }
 
         public void PauseMenuSwitcher()
         {

@@ -12,7 +12,7 @@ namespace Project._Scripts.UI
 
         public void QuitButton()
         {
-            LevelManager.Instance.LoadMainMenu();
+            LevelManager.Instance?.LoadMainMenu();
         }
     }
 }
