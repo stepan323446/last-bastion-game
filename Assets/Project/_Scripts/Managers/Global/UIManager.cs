@@ -1,111 +1,114 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 namespace Project._Scripts.Managers.Global
 {
     public enum CanvasType
-{
-    MainMenu,
-    Gamehud,
-    PauseMenu,
-}
-[System.Serializable]
-struct CanvasOptions
-{
-    public CanvasType canvasType;
-    public GameObject canvas;
-    public bool displayCursor;
-    public bool useBackdrop;
-    public bool freezeTime;
-    public bool lockSwitchCanvas;
-}
-public class UIManager : SingletonPersistence<UIManager>
-{
-    [SerializeField] List<CanvasOptions> canvasOptions = new List<CanvasOptions>();
-    [SerializeField] GameObject backdropCanvas;
-    [SerializeField] CanvasType activeType = CanvasType.Gamehud;
-
-    bool cursorDisplay = false;
-    int previousCanvasIndex = -1;
-    int currentCanvasIndex = -1;
-
-    private bool IsMainMenu
     {
-        get => canvasOptions[currentCanvasIndex].canvasType == CanvasType.MainMenu;
+        _None,
+        Gamehud,
+        PauseMenu
     }
-
-    private CanvasType PreviousCanvas
+    [System.Serializable]
+    public struct CanvasOptions
     {
-        get => canvasOptions[previousCanvasIndex].canvasType;
+        public CanvasType canvasType;
+        public GameObject canvas;
+        public bool displayCursor;
+        public bool disableControl;
+        public bool useBackdrop;
+        public bool freezeTime;
+        public bool lockSwitchCanvas;
     }
-    private CanvasType CurrentCanvas
+    public class UIManager : SingletonPersistence<UIManager>
     {
-        get => canvasOptions[currentCanvasIndex].canvasType;
-    }
+        [SerializeField] List<CanvasOptions> _canvasOptions = new List<CanvasOptions>();
+        [SerializeField] GameObject _backdropCanvas; 
+        [SerializeField] CanvasType _defaultType = CanvasType.Gamehud;
 
-    private void Start()
-    {
-        DisplayCanvas(activeType);
-    }
+        bool cursorDisplay = false;
 
-    private void Update()
-    {
-        if(!canvasOptions[currentCanvasIndex].lockSwitchCanvas)
-            CanvasSwitcher();
+        private Dictionary<CanvasType, CanvasOptions> _canvasDict = new Dictionary<CanvasType, CanvasOptions>();
+        private CanvasType PreviousCanvasType { get; set;  }
+        private CanvasType CurrentCanvasType { get; set; }
+        public CanvasOptions CurrentCanvasOptions { get => _canvasDict [CurrentCanvasType]; }
         
-        // Display PauseMenu if we are not in MainMenu
-        if (Input.GetKeyDown(KeyCode.Escape) && !IsMainMenu)
+        private void Start()
         {
-            PauseMenuSwitch();
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        Cursor.visible = cursorDisplay;
-    }
-    
-    private void CanvasSwitcher()
-    {
-        // KeyCodes for switching between canvases (Inventory, ...)
-    }
-
-    public void DisplayCanvas(CanvasType canvasType)
-    {
-        for (int i = 0; i < canvasOptions.Count; i++)
-        {
-            CanvasOptions option = canvasOptions[i];
+            foreach (CanvasOptions opt in _canvasOptions) 
+                _canvasDict.Add(opt.canvasType, opt);
             
-            if (option.canvasType == canvasType)
+            DisplayCanvas(_defaultType, true);
+        }
+
+        private void Update()
+        {
+            // Pause menu
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                previousCanvasIndex = currentCanvasIndex == -1 ? i : currentCanvasIndex; 
-                
-                option.canvas.gameObject.SetActive(true);
-                SetBackdropCanvas(option.useBackdrop);
-                SetCursorDisplay(option.displayCursor);
-                Time.timeScale = option.freezeTime ? 0f : 1f;
-                
-                currentCanvasIndex = i;
-            }
-            else
-            {
-                option.canvas.gameObject.SetActive(false);
+                PauseMenuSwitcher();
             }
         }
-    }
 
-    public void PauseMenuSwitch()
-    {
-        // If we are already in PauseMenu, return back to previous saved menu else show pause
-        if(CurrentCanvas == CanvasType.PauseMenu)
-            DisplayCanvas(PreviousCanvas);
-        else
-            DisplayCanvas(CanvasType.PauseMenu);
-    }
-    public void SetBackdropCanvas(bool display) => backdropCanvas.gameObject.SetActive(display);
-    public void SetCursorDisplay(bool display) => cursorDisplay = display;
-}
+        private void FixedUpdate()
+        {
+            Cursor.visible = cursorDisplay;
+        }
+        
+        private void CanvasSwitcher()
+        {
+            // KeyCodes for switching between canvases (Inventory, ...)
+        }
 
+        public void DisplayCanvas(CanvasType canvasType, bool ignoreLock = false)
+        {
+            if (!ignoreLock && _canvasDict[CurrentCanvasType].lockSwitchCanvas)
+                return;
+                
+            PreviousCanvasType = _canvasDict[CurrentCanvasType].canvasType;
+            for (int i = 0; i < _canvasOptions.Count; i++)
+            {
+                CanvasOptions option = _canvasOptions[i];
+                
+                if (option.canvasType == canvasType)
+                {
+                    option.canvas.gameObject.SetActive(true);
+                    SetBackdropCanvas(option.useBackdrop);
+                    SetCursorDisplay(option.displayCursor);
+                    Time.timeScale = option.freezeTime ? 0f : 1f;
+                    
+                    CurrentCanvasType = option.canvasType;
+                }
+                else
+                {
+                    option.canvas.gameObject.SetActive(false);
+                }
+            }
+        }
+        public void QuitToMainMenu()
+        {
+            LevelManager.Instance.LoadMainMenu();
+        }
+
+        public void PauseMenuSwitcher()
+        {
+            if(CurrentCanvasType == CanvasType.PauseMenu)
+                DisplayCanvas(PreviousCanvasType, true);
+            else
+                DisplayCanvas(CanvasType.PauseMenu);
+        }
+        public void EnableUIManager()
+        {
+            DisplayCanvas(_defaultType, true);
+        }
+        public void DisableUIManager()
+        {
+            DisplayCanvas(CanvasType._None, true);
+        }
+        public void SetBackdropCanvas(bool display) => _backdropCanvas.gameObject.SetActive(display);
+        public void SetCursorDisplay(bool display) => cursorDisplay = display;
+    }
 }

@@ -1,3 +1,4 @@
+using Project._Scripts.Managers.Global;
 using UnityEngine;
 
 namespace Project._Scripts.Gameplay.Player
@@ -16,7 +17,7 @@ namespace Project._Scripts.Gameplay.Player
 
         private bool CanProcessInput()
         {
-            return !_health.IsDead;
+            return !_health.IsDead && !UIManager.Instance.CurrentCanvasOptions.disableControl;
         }
         public Vector2 GetMoveInput()
         {

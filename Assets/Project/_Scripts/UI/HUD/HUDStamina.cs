@@ -11,12 +11,12 @@ namespace Project._Scripts.UI.HUD
 
         private float CurrentStamina
         {
-            get => PlayerStats.Instance.Stamina;
+            get => DataManager.Instance.playerData.CurrentStamina;
         }
 
         private float MaxStamina
         {
-            get => PlayerStats.Instance.MaxStamina;
+            get => DataManager.Instance.playerData.MaxStamina;
         }
     
         void Update()

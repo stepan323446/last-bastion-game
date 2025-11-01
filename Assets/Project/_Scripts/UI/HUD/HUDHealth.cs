@@ -10,8 +10,8 @@ namespace Project._Scripts.UI.HUD
         [SerializeField] Slider _healthBar;
         [SerializeField] TextMeshProUGUI _healthText;
     
-        private float _MaxHealth { get => DataManager.Instance.playerData.maxHealth; }
-        private float _CurrentHealth { get => DataManager.Instance.playerData.currentHealth; }
+        private float _MaxHealth { get => DataManager.Instance.playerData.MaxHealth; }
+        private float _CurrentHealth { get => DataManager.Instance.playerData.CurrentHealth; }
     
         void Update()
         {

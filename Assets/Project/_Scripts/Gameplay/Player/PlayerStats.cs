@@ -2,28 +2,22 @@ using UnityEngine;
 
 namespace Project._Scripts.Gameplay.Player
 {
-    public class PlayerStats : Singleton<PlayerStats>
+    public class PlayerStats : MonoBehaviour
     {
         [Header("Stamina")]
         [SerializeField] float staminaRegenerationRate = 0.3f;
-        [SerializeField] float stamina;
         public bool staminaRegenEnabled = true;
 
         public float MaxStamina
         {
-            get => DataManager.Instance.playerData.maxStamina;
-            private set => DataManager.Instance.playerData.maxStamina = value;
+            get => DataManager.Instance.playerData.MaxStamina;
+            private set => DataManager.Instance.playerData.MaxStamina = value;
         }
 
         public float Stamina
         {
-            get => stamina;
-            set => stamina = Mathf.Clamp(value, 0f, MaxStamina);
-        }
-
-        private void Start()
-        {
-            Stamina = 100f;
+            get => DataManager.Instance.playerData.CurrentStamina;
+            set => DataManager.Instance.playerData.CurrentStamina = value;
         }
 
         private void Update()
