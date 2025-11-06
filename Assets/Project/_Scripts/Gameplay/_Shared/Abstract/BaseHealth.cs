@@ -1,3 +1,4 @@
+using System;
 using Project._Scripts.Gameplay._Shared;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +12,7 @@ namespace Project._Scripts.Gameplay._Shared.Abstract
         public UnityAction<float, DamageTypeSo> OnDamaged;
         public UnityAction<float> OnHealed;
         public UnityAction<DamageTypeSo> OnDied;
+        public UnityAction<float> OnHealthChanged;
     
         public abstract float MaxHealth { get; protected set; }
         public abstract float CurrentHealth { get; protected set; }
@@ -20,11 +22,11 @@ namespace Project._Scripts.Gameplay._Shared.Abstract
             get => CurrentHealth <= 0;
         }
 
-
         public void Heal(float healAmount)
         {
             CurrentHealth = Mathf.Clamp(CurrentHealth + healAmount, 0f, MaxHealth);
             OnHealed?.Invoke(CurrentHealth);
+            OnHealthChanged?.Invoke(healAmount);
         }
 
         public void TakeDamage(float damage, DamageTypeSo damageSource = null)
@@ -37,6 +39,7 @@ namespace Project._Scripts.Gameplay._Shared.Abstract
             CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0f, MaxHealth);
 
             OnDamaged?.Invoke(damage, damageSource);
+            OnHealthChanged?.Invoke(damage * -1);
 
             if(IsDead) HandleDeath();
         }

@@ -27,6 +27,14 @@ namespace Project._Scripts.Gameplay.Player
             OnDied += DiedHandler;
             OnHealed += HealedHandler;
             OnDamaged += DamageHandler;
+            OnHealthChanged += HealthChangedHandler;
+        }
+        private void OnDestroy()
+        {
+            OnDied -= DiedHandler;
+            OnHealed -= HealedHandler;
+            OnDamaged -= DamageHandler;
+            OnHealthChanged -= HealthChangedHandler;
         }
 
         public float GetRatio() => CurrentHealth / MaxHealth;
@@ -45,6 +53,11 @@ namespace Project._Scripts.Gameplay.Player
         private void HealedHandler(float healAmount)
         {
             GameEvents.OnPlayerHealed?.Invoke(healAmount);
+        }
+
+        private void HealthChangedHandler(float healthChangedAmount)
+        {
+            GameEvents.OnHealthChanged?.Invoke(healthChangedAmount);
         }
     }
 }

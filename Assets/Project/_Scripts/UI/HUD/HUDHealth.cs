@@ -1,21 +1,26 @@
+using Project._Scripts.Gameplay;
+using Project._Scripts.UI.Abstract;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Project._Scripts.UI.HUD
 {
-    public class HUDHealth : MonoBehaviour
+    public class HUDHealth : HealthBar
     {
         [Header("UI Objects")]
-        [SerializeField] Slider _healthBar;
         [SerializeField] TextMeshProUGUI _healthText;
     
-        private float _MaxHealth { get => DataManager.Instance.playerData.MaxHealth; }
-        private float _CurrentHealth { get => DataManager.Instance.playerData.CurrentHealth; }
-    
-        void Update()
+        protected override float _MaxHealth { get => DataManager.Instance.playerData.MaxHealth; }
+        protected override float _CurrentHealth { get => DataManager.Instance.playerData.CurrentHealth; }
+
+        private void Awake()
         {
-            _healthBar.value = _CurrentHealth / _MaxHealth;
+            GameEvents.OnHealthChanged += HealthChangedHandler;
+        }
+
+        protected override void UpdateHealthBar()
+        {
+            base.UpdateHealthBar();
             _healthText.text = (int)_CurrentHealth + "/" + (int)_MaxHealth;
         }
     }
