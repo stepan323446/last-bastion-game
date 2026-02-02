@@ -9,7 +9,7 @@ public class SaveController : MonoBehaviour
 {
     private string saveLocation;
     private InventoryController inventoryController;
-    private HotbarController hotbarController;
+    // private HotbarController hotbarController;
     private Chest[] chests;
     private ShopNPC[] shops; //Track shops in scene
 
@@ -25,7 +25,7 @@ public class SaveController : MonoBehaviour
         //saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
         saveLocation = Application.dataPath + "/testData.json";
         inventoryController = FindObjectOfType<InventoryController>();
-        hotbarController = FindObjectOfType<HotbarController>();
+        // hotbarController = FindObjectOfType<HotbarController>();
         chests = FindObjectsOfType<Chest>();
         shops = FindObjectsOfType<ShopNPC>();
     }
@@ -37,7 +37,7 @@ public class SaveController : MonoBehaviour
             playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position,
             mapBoundary = FindObjectOfType<CinemachineConfiner>().m_BoundingShape2D.gameObject.name,
             inventorySaveData = inventoryController.GetInventoryItems(),
-            hotbarSaveData = hotbarController.GetHotbarItems(),
+            // hotbarSaveData = hotbarController.GetHotbarItems(),
             chestSaveData = GetChestsState(),
             questProgressData = QuestController.Instance.activateQuests,
             handinQuestIDs = QuestController.Instance.handinQuestIDs,
@@ -106,7 +106,7 @@ public class SaveController : MonoBehaviour
             MapController_Dynamic.Instance?.GenerateMap(savedMapBoundry);
 
             inventoryController.SetInventoryItems(saveData.inventorySaveData);
-            hotbarController.SetHotbarItems(saveData.hotbarSaveData);
+            // hotbarController.SetHotbarItems(saveData.hotbarSaveData);
 
             LoadChestStates(saveData.chestSaveData);
 
@@ -121,7 +121,7 @@ public class SaveController : MonoBehaviour
             SaveGame();
 
             inventoryController.SetInventoryItems(new List<InventorySaveData>());
-            hotbarController.SetHotbarItems(new List<InventorySaveData>());
+            // hotbarController.SetHotbarItems(new List<InventorySaveData>());
 
             MapController_Dynamic.Instance?.GenerateMap();
         }

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Item
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -12,9 +13,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - EnemyBorder
+  - Enemy
+  - Player
   - 
   - 
   - 
@@ -59,4 +60,7 @@ TagManager:
     locked: 0
   - name: Decor
     uniqueID: 2283123301
+    locked: 0
+  - name: WorldUI
+    uniqueID: 4013572573
     locked: 0

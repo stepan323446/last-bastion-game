@@ -32,6 +32,8 @@ public class MapController_Manual : MonoBehaviour
 
     public void HighlightArea(string areaName)
     {
+        GameEvents.OnMapChanged?.Invoke(areaName);
+        
         foreach(Image area in mapImages)
         {
             area.color = dimmedColour;

@@ -45,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("InputY", moveInput.y);
     }
 
+    public Vector2 GetMoveInput() => moveInput;
+
     void StopMovementAnimations()
     {
         animator.SetBool("isWalking", false);

@@ -164,10 +164,18 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     {
         if(eventData.button == PointerEventData.InputButton.Right)
         {
-            SplitStack();
+            // SplitStack();
+            UseItemHandle();
         }
     }
 
+    public void UseItemHandle()
+    {
+        Item item = GetComponent<Item>();
+        if (item == null) return;
+        
+        item.UseItem();
+    } 
     private void SplitStack()
     {
         Item item = GetComponent<Item>();
