@@ -16,27 +16,24 @@ MonoBehaviour:
   npcPortrait: {fileID: 21300000, guid: cfb809cb004aceb4284a0491bcf23df1, type: 3}
   dialogueLines:
   - Hello there young man!
-  - Can you help?
-  - Thanks!
-  - I knew you'd help!
-  - Oh... ok...
-  - Maybe next time...
-  - Good luck finding those potions!
-  - Thank you for the potions!
-  - Maybe I'll open a shop...
-  autoProgressLines: 010000000000000100
-  endDialogueLines: 000000010001010001
+  - It's dangerous to go alone!
+  - Take this.
+  - '*The old man points towards the chest*'
+  - The chest is right there, take it, its yours now
+  - Now you have your first companion!
+  autoProgressLines: 01010100
+  endDialogueLines: 000000000101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: e4f57534b6f873b44862920239432836, type: 3}
   voicePitch: 0.5
   choices:
-  - dialogueIndex: 1
+  - dialogueIndex: 2
     choices:
-    - Yes
-    - No
-    nextDialogueIndexes: 0200000004000000
-    givesQuest: 0100
-  questInProgressIndex: 6
-  questCompletedIndex: 7
-  quest: {fileID: 11400000, guid: 0d5811cc82c01344baa04e4ad00b6697, type: 2}
+    - Wow.
+    - Thank you.
+    nextDialogueIndexes: 0300000003000000
+    givesQuest: 0101
+  questInProgressIndex: 4
+  questCompletedIndex: 5
+  quest: {fileID: 11400000, guid: fb961b93f6299ad76949c682f63aa5f2, type: 2}

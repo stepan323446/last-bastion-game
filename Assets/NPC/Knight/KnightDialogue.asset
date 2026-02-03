@@ -16,7 +16,7 @@ MonoBehaviour:
   npcPortrait: {fileID: 21300000, guid: 38ff0fdde6d18ad668df94c9a63b415f, type: 3}
   dialogueLines:
   - Hello Frog hero!
-  - Thinking of becoming a knight some day?
+  - Dont go out unarmed, its dangerous these days!
   autoProgressLines: 0100
   endDialogueLines: 
   autoProgressDelay: 1.5

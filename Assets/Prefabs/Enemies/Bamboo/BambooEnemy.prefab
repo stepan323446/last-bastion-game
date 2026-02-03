@@ -835,8 +835,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isImmortal: 0
-  _maxHealth: 100
-  _currentHealth: 100
+  _maxHealth: 70
+  _currentHealth: 70
 --- !u!50 &3515790928072403839
 Rigidbody2D:
   serializedVersion: 4
@@ -881,7 +881,7 @@ MonoBehaviour:
   _deathSound: 
   _deathSecondsDelay: 0
   _deathAnimatorVar: 
-  _dropPrefab: {fileID: 0}
+  _dropPrefab: {fileID: 1053799466747513713, guid: cccac3812fe224f7b82802d546cc8d61, type: 3}
   _delayBeforeAttack: 0.5
   _attackDuration: 1
   _attackSize: {x: 1.5, y: 1.5}
