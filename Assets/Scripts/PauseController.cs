@@ -15,6 +15,7 @@ public class PauseController : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        IsGamePaused = false;
         SceneManager.LoadScene(mainMenuSceneName);
     }
 }

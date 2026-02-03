@@ -560,11 +560,11 @@ MonoBehaviour:
   _deathSecondsDelay: 0
   _deathAnimatorVar: 
   _dropPrefab: {fileID: 0}
-  _delayBeforeAttack: 0.5
+  _delayBeforeAttack: 0
   _attackDuration: 0.5
   _attackSize: {x: 2, y: 2}
   _attackDistance: 0
-  _attackAnimatorVar: attacking
+  _attackAnimatorVar: 
   _playerLayer:
     serializedVersion: 2
     m_Bits: 256

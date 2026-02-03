@@ -19,6 +19,11 @@ public class SimpleSpawner : MonoBehaviour
         _canSpawn = true;
     }
 
+    private void OnDisable()
+    {
+        GameEvents.OnMapChanged -= MapChangedHandler;
+    }
+
     public void ResetSpawner()
     {
         if (_currentGameObject != null)

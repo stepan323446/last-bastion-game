@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,11 @@ public class MusicManager : MonoBehaviour
         {
             _musicByMapDictionary.Add(m.name, m.audioClip);
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameEvents.OnMapChanged -= MusicByMapHandle;
     }
 
     void MusicByMapHandle(string mapName)

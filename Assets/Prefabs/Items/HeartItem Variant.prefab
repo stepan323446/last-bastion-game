@@ -44,6 +44,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeartItem Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7012925313764370676, guid: 82362ef6e5b02804b9a39e8f4a064394, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7012925313764370676, guid: 82362ef6e5b02804b9a39e8f4a064394, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7112092505441140744, guid: 82362ef6e5b02804b9a39e8f4a064394, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

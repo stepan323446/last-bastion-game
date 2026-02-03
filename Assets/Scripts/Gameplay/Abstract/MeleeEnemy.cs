@@ -81,11 +81,15 @@ public abstract class MeleeEnemy : Enemy
     private IEnumerator AttackCoroutine()
     {
         yield return new WaitForSeconds(_delayBeforeAttack);
-        animator.SetBool(_attackAnimatorVar, true);
+        if(!string.IsNullOrEmpty(_attackAnimatorVar))
+            animator.SetBool(_attackAnimatorVar, true);
+        
         Hit();
         
         yield return new WaitForSeconds(_attackDuration);
-        animator.SetBool(_attackAnimatorVar, false);
+        if(!string.IsNullOrEmpty(_attackAnimatorVar))
+            animator.SetBool(_attackAnimatorVar, false);
+        
         _attackCoroutine = null;
     }
     protected virtual void OnDrawGizmosSelected()

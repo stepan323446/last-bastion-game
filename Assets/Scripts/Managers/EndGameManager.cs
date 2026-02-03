@@ -18,6 +18,8 @@ public class EndGameManager : SingletonPersistence<EndGameManager>
     
     public void StartEndScreen()
     {
+        endGameInfo.Clear();
+        
         endGameInfo.Add(EndGameDatatype.KILLED_ENEMIES, DataManager.Instance.playerData.KilledEnemiesCount);
         endGameInfo.Add(EndGameDatatype.COINS, CurrencyController.Instance.GetGold());
         endGameInfo.Add(EndGameDatatype.COMPLETED_QUESTS, QuestController.Instance.handinQuestIDs.Count);

@@ -21,6 +21,11 @@ public class HUDHealth : HealthBar
             playerWeapon.onWeaponChanged += SetWeaponItem;
     }
 
+    private void OnDestroy()
+    {
+        GameEvents.OnHealthChanged -= HealthChangedHandler;
+    }
+
     protected override void UpdateHealthBar()
     {
         base.UpdateHealthBar();

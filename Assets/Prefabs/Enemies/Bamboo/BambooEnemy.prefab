@@ -882,11 +882,11 @@ MonoBehaviour:
   _deathSecondsDelay: 0
   _deathAnimatorVar: 
   _dropPrefab: {fileID: 1053799466747513713, guid: cccac3812fe224f7b82802d546cc8d61, type: 3}
-  _delayBeforeAttack: 0.5
+  _delayBeforeAttack: 0
   _attackDuration: 1
   _attackSize: {x: 1.5, y: 1.5}
   _attackDistance: 0
-  _attackAnimatorVar: attacking
+  _attackAnimatorVar: 
   _playerLayer:
     serializedVersion: 2
     m_Bits: 256
