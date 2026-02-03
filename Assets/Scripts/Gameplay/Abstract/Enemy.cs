@@ -50,6 +50,7 @@ public abstract class Enemy : MonoBehaviour
     {
         SoundEffectManager.Play(_deathSound);
         PlayDeathEffect();
+        DataManager.Instance.playerData.KilledEnemiesCount++;
     }
 
     private void PlayDamageEffect()

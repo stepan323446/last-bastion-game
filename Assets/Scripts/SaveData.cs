@@ -12,6 +12,7 @@ public class SaveData
     public List<ChestSaveData> chestSaveData;
     public List<QuestProgress> questProgressData;
     public List<string> handinQuestIDs;
+    public PlayerData playerData;
 
     public int playerGold;
     public List<ShopInstanceData> shopStates = new();

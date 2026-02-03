@@ -43,5 +43,10 @@ public class MusicManager : MonoBehaviour
             audioSource.Stop();
         }
     }
+
+    public void MusicSliderValueChanged(float value)
+    {
+        audioSource.volume = value;
+    }
 }
 

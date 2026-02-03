@@ -42,7 +42,8 @@ public class SaveController : MonoBehaviour
             questProgressData = QuestController.Instance.activateQuests,
             handinQuestIDs = QuestController.Instance.handinQuestIDs,
             playerGold = CurrencyController.Instance.GetGold(),
-            shopStates = GetShopStates()
+            shopStates = GetShopStates(),
+            playerData = DataManager.Instance.playerData
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
@@ -115,6 +116,7 @@ public class SaveController : MonoBehaviour
 
             QuestController.Instance.LoadQuestProgress(saveData.questProgressData);
             QuestController.Instance.handinQuestIDs = saveData.handinQuestIDs;
+            DataManager.Instance.playerData.LoadData(saveData.playerData);
         }
         else
         {

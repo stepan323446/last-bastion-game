@@ -41,6 +41,14 @@ public class PlayerHealth : BaseHealth
     private void DiedHandler()
     {
         GameEvents.OnPlayerDied?.Invoke();
+        if (EndGameManager.Instance != null)
+        {
+            EndGameManager.Instance.StartEndScreen();   
+        }
+        else
+        {
+            Debug.LogWarning("No end Screen Manager");
+        }
     }
 
     private void DamageHandler(float damage)
