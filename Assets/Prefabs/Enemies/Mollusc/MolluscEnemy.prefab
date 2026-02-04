@@ -555,8 +555,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 15
-  _takeDamageSound: 
-  _deathSound: Hit
+  _takeDamageSound: Hit
+  _deathSound: 
   _deathSecondsDelay: 0
   _deathAnimatorVar: 
   _dropPrefab: {fileID: 2418417427973986498, guid: a7fac9016ef1d358486a4f705c6efe58, type: 3}

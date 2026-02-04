@@ -74884,7 +74884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6027596676308622769, guid: e3b3ab0d4e57cfadd99bc6e97ddc03cc, type: 3}
       propertyPath: itemPrefabs.Array.size
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6027596676308622769, guid: e3b3ab0d4e57cfadd99bc6e97ddc03cc, type: 3}
       propertyPath: itemPrefabs.Array.data[5]
@@ -74918,6 +74918,10 @@ PrefabInstance:
       propertyPath: itemPrefabs.Array.data[12]
       value: 
       objectReference: {fileID: 2652313481812316013, guid: cf49c5351c25dcec9ae388fc0c0dbbb5, type: 3}
+    - target: {fileID: 6027596676308622769, guid: e3b3ab0d4e57cfadd99bc6e97ddc03cc, type: 3}
+      propertyPath: itemPrefabs.Array.data[13]
+      value: 
+      objectReference: {fileID: 7180938977054125273, guid: 3f25ed5bcc5a2b2bc8e0c6077d4ed2d3, type: 3}
     - target: {fileID: 6337370190529029742, guid: e3b3ab0d4e57cfadd99bc6e97ddc03cc, type: 3}
       propertyPath: m_Name
       value: ItemDictionary

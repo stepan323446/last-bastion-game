@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ee2d1df5e3bc81288541a21019e14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 30
   animationSpeed: 1
   isSlashAnimation: 0
 --- !u!95 &3437624470855950651
