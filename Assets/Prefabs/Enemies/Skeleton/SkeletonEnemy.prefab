@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  _takeDamageSound: Chest
+  _takeDamageSound: Hit
   _deathSound: 
   _deathSecondsDelay: 5
   _deathAnimatorVar: died
@@ -464,7 +464,6 @@ MonoBehaviour:
   _speed: 2
   _stopDistance: 1.2
   _detectTriggerCollider: {fileID: 8530943903598069245}
-  _playerTransform: {fileID: 0}
 --- !u!114 &7141252868369249756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,6 +692,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4ceb64fc8c1900a839c7200c547ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4586928446661247591
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5063b9e38ffe06d4dab5a030016e62ce, type: 3}
+  m_Name: NewNPCDialogue
+  m_EditorClassIdentifier: 
+  npcName: Mike
+  npcPortrait: {fileID: 21300000, guid: 8a9979c3bd7ce53569e96d28709c8e65, type: 3}
+  dialogueLines:
+  - Hello Frog Hero!
+  - I have a favor to ask of you.
+  - My fishing home is overrun by Molluscs, would you care to remove them for me?
+  - Thank you, i knew i could count on you!
+  - Oh ok, see you around then.
+  - The house is east of the forest.
+  - Thank you so much, i knew you could do it!
+  autoProgressLines: 01010101010101
+  endDialogueLines: 00000001010101
+  autoProgressDelay: 1
+  typingSpeed: 0.22
+  voiceSound: {fileID: 0}
+  voicePitch: 1
+  choices:
+  - dialogueIndex: 2
+    choices:
+    - Sure, no problem.
+    - I don't have time right now.
+    nextDialogueIndexes: 0300000004000000
+    givesQuest: 0100
+  questInProgressIndex: 5
+  questCompletedIndex: 6
+  quest: {fileID: 11400000, guid: 6569618bdc610f421a3b02a28cbdfef8, type: 2}

@@ -16,12 +16,14 @@ MonoBehaviour:
   npcPortrait: {fileID: 21300000, guid: de869e7390fa8c0429a7c47d94a65322, type: 3}
   dialogueLines:
   - Hi!
-  - Do you need something?
-  - Well I'm too busy - bye!
-  - Are you sure?
+  - Can you do something for me?
+  - Thanks a bunch, i need you to collect some herbs in the forest.
+  - I heard the bamboo monsters drop those.
   - Ok! Bye!
-  autoProgressLines: 0101010101
-  endDialogueLines: 0000010001
+  - There are many of them in the northern forest
+  - Thanks for your help!
+  autoProgressLines: 01010101010101
+  endDialogueLines: 00000001010101
   autoProgressDelay: 0.5
   typingSpeed: 0.025
   voiceSound: {fileID: 8300000, guid: 2dbf635f9089af64786b7bc623118ed1, type: 3}
@@ -31,9 +33,8 @@ MonoBehaviour:
     choices:
     - Yes
     - No
-    nextDialogueIndexes: 0200000003000000
-  - dialogueIndex: 3
-    choices:
-    - Yes I'm sure!
-    - I don't know!
-    nextDialogueIndexes: 0400000002000000
+    nextDialogueIndexes: 0200000004000000
+    givesQuest: 0100
+  questInProgressIndex: 5
+  questCompletedIndex: 6
+  quest: {fileID: 11400000, guid: d3b859127385a6124b72f4c0c825f074, type: 2}

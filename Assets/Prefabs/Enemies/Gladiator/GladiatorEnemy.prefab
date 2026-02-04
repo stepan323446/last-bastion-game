@@ -283,11 +283,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 40
-  _takeDamageSound: Chest
+  _takeDamageSound: Hit
   _deathSound: 
   _deathSecondsDelay: 5
   _deathAnimatorVar: died
-  _dropPrefab: {fileID: 1301794101558727318, guid: 3aa24e4b06e4491d4b2b799e31774e5b, type: 3}
+  _dropPrefab: {fileID: 3643649181375636713, guid: 3f25ed5bcc5a2b2bc8e0c6077d4ed2d3, type: 3}
   _delayBeforeAttack: 0.5
   _attackDuration: 2
   _attackSize: {x: 2.13, y: 1.5}

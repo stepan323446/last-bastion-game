@@ -4396,7 +4396,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Your Story
 
-    Was End'
+    Has   Ended'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2abf2c9feb7d39b4aa6010c212cb1ff1, type: 2}
   m_sharedMaterial: {fileID: 3912228376523283368, guid: 2abf2c9feb7d39b4aa6010c212cb1ff1, type: 2}

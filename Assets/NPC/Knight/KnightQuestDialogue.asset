@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5063b9e38ffe06d4dab5a030016e62ce, type: 3}
+  m_Name: KnightQuestDialogue
+  m_EditorClassIdentifier: 
+  npcName: Knight
+  npcPortrait: {fileID: 21300000, guid: 38ff0fdde6d18ad668df94c9a63b415f, type: 3}
+  dialogueLines:
+  - Hello Frog hero!
+  - Do you remember the gladiator that attacked our village?
+  - He was last seen going into the dungeon, in the north part of the forest.
+  - If you defeat him and bring me his axe you will be rewarded handsomley.
+  - What do you say?
+  - I knew you were the right person to ask!
+  - Then i will expect you to return after you train
+  - I expect triumph on your return!
+  - Congratulations, keep the axe, it needs a real warior to wield it.
+  autoProgressLines: 010101010101010101
+  endDialogueLines: 000000000001010101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: c56c1601ea8cb609199a9005aa836724, type: 3}
+  voicePitch: 1
+  choices:
+  - dialogueIndex: 4
+    choices:
+    - I'll do it
+    - I'm not ready
+    nextDialogueIndexes: 0500000006000000
+    givesQuest: 0100
+  questInProgressIndex: 7
+  questCompletedIndex: 8
+  quest: {fileID: 11400000, guid: 786945abc4ff2efcc9055f431ffe128f, type: 2}
