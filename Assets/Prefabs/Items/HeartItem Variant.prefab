@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 2
-  Name: Health Potion
+  Name: Health
   quantity: 1
   buyPrice: 20
   sellPriceMultiplier: 0.5
